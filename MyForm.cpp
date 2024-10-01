@@ -210,21 +210,6 @@ void MyForm::rel_factor(int numSB, std::vector<int> num_p_e, int numC, std::vect
         ++y;
     }
     out->Close();
-    /*double averageMTBF = 0.0;
-    double averageMTTR = 0.0;
-    for (int i = 0; i < l.size(); ++i) {
-        averageMTBF += 1.0 / l[i];
-        averageMTTR += 1.0 / m[i];
-    }
-    averageMTBF /= l.size();
-    averageMTTR /= m.size();
-
-    double averageAvailability = averageMTBF / (averageMTBF + averageMTTR);
-    String^ readinessFilePath = "C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\tmp.txt";
-    StreamWriter^ readinessOut = gcnew StreamWriter(readinessFilePath);
-    String^ formattedReadiness = String::Format(System::Globalization::CultureInfo::InvariantCulture, "{0:F4}", averageAvailability);
-    readinessOut->WriteLine(formattedReadiness);
-    readinessOut->Close();*/
 }
 
 void MyForm::up_bound(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m) {
