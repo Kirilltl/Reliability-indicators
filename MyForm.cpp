@@ -22,8 +22,6 @@ MyForm::~MyForm()
     }
 }
 
-//работа с вводом и выводом данных
-
 std::vector<int> MyForm::parse_int(System::String^ input)
 {
     std::vector<int> result;
@@ -58,31 +56,8 @@ void MyForm::click_button(System::Object^ sender, System::EventArgs^ e)
     low_bound_1(numSB, num_p_e, l, m);
     low_bound_2(numSB, num_p_e, l, m);
     display_chart();
-    //print_coefficient_sr();
     print_coefficient_min();
-    //print_factor_bound(numSB, num_p_e, l, m);
 }
-
-//void MyForm::print_coefficient_sr() {
-//    String^ filePath = "C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\factor_time.txt";
-//    double sum = 0.0;
-//    int cnt = 0;
-//    StreamReader^ sr = gcnew StreamReader(filePath);
-//    String^ line;
-//    while ((line = sr->ReadLine()) != nullptr) {
-//        array<String^>^ parts = line->Split(' ');
-//        if (parts->Length >= 2) {
-//            double val;
-//            if (Double::TryParse(parts[1], System::Globalization::NumberStyles::Any, System::Globalization::CultureInfo::InvariantCulture, val)) {
-//                sum += val;
-//                cnt++;
-//            }
-//        }
-//    }
-//    sr->Close();
-//    double sre = cnt > 0 ? sum / cnt : 0;
-//    textBox6->Text = sre.ToString("F2", System::Globalization::CultureInfo::InvariantCulture);
-//}
 
 void MyForm::print_coefficient_min() {
     String^ filePath = "C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\factor_time.txt";
@@ -107,8 +82,6 @@ void MyForm::print_coefficient_min() {
     textBox7->Text = min.ToString("F2", System::Globalization::CultureInfo::InvariantCulture);
 }
 
-//работа с графиком
-
 void MyForm::read_data_for_graphic(Series^ series, String^ fileName) {
     StreamReader^ sr = gcnew StreamReader(fileName);
     String^ line;
@@ -132,10 +105,10 @@ void MyForm::display_chart() {
         "C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\low_bound2.txt"
     };
     array<String^>^ seriesNames = gcnew array<String^> {
-        "Коэффициент готовности от времени",
-        "Верхняя граница", 
-        "Нижняя граница, первый способ", 
-        "Нижняя граница, второй способ"
+        "РљРѕСЌС„С„РёС†РёРµРЅС‚ РіРѕС‚РѕРІРЅРѕСЃС‚Рё РѕС‚ РІСЂРµРјРµРЅРё",
+        "Р’РµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р°", 
+        "РќРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р°, РїРµСЂРІС‹Р№ СЃРїРѕСЃРѕР±", 
+        "РќРёР¶РЅСЏСЏ РіСЂР°РЅРёС†Р°, РІС‚РѕСЂРѕР№ СЃРїРѕСЃРѕР±"
     };
     array<Color>^ colors = gcnew array<Color> {
         Color::Olive,
@@ -152,8 +125,6 @@ void MyForm::display_chart() {
     }
     chart1->Invalidate(); 
 }
-
-//основная логика
 
 bool MyForm::is_any_system_operational(const std::vector<OldSystem>& systems)
 {
@@ -282,7 +253,6 @@ void MyForm::up_bound(int numSB, std::vector<int> num_p_e, std::vector<double> l
     out->Close();
 }
 
-
 void MyForm::low_bound_1(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m) {
     StreamWriter^ out = gcnew StreamWriter("C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\low_bound1.txt");
     List<double>^ coefs = gcnew List<double>();
@@ -329,25 +299,6 @@ void MyForm::low_bound_2(int numSB, std::vector<int> num_p_e, std::vector<double
     }
     out->Close();
 }
-
-//void MyForm::print_factor_bound(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m) {
-//    StreamWriter^ out = gcnew StreamWriter("C:\\Users\\79112\\source\\repos\\InterfaceOfProgram\\factor_bound.txt");
-//    List<double>^ coefs = gcnew List<double>();
-//    double conv = 1.0;
-//    for (int block = 0; block < numSB; ++block) {
-//        double l1 = l[block];
-//        double m1 = m[block];
-//        double k11 = (m1 / (m1 + l1));
-//        coefs->Add(k11);
-//    }
-//    for (int i = 0; i < coefs->Count; i++)
-//        conv *= coefs[i];
-//    for (double t = 0; t < T - 0.001; t += step) {
-//        String^ formattedString = String::Format(System::Globalization::CultureInfo::InvariantCulture, "{0:F1} {1}", t, conv);
-//        out->WriteLine(formattedString);
-//    }
-//    out->Close();
-//}
 
 int main(array<System::String^>^ args) {
     Application::EnableVisualStyles();
