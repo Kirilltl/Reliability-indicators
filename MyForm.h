@@ -58,10 +58,8 @@ namespace InterfaceOfProgram {
 		void up_bound(int numSB, std::vector<int> num_p_e,std::vector<double> l, std::vector<double> m);
 		void low_bound_1(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m);
 		void low_bound_2(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m);
-		//void print_factor_bound(int numSB, std::vector<int> num_p_e, std::vector<double> l, std::vector<double> m);
 		std::vector<int> parse_int(System::String^ input);
 		std::vector<double> parse_double(System::String^ input);
-		//void print_coefficient_sr();
 		void print_coefficient_min();
 		void rel_factor(int numSB, std::vector<int> num_p_e, int num_c, std::vector<double> l, std::vector<double> m);
 		bool is_any_system_operational(const std::vector<OldSystem>& systems);
@@ -97,29 +95,23 @@ namespace InterfaceOfProgram {
 			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// button2
-			// 
+			
 			this->button2->BackColor = System::Drawing::Color::White;
 			this->button2->Location = System::Drawing::Point(201, 7);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(101, 30);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"Ðàñ÷åò";
+			this->button2->Text = L"ÃÃ Ã±Ã·Ã¥Ã²";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::click_button);
-			// 
-			// textBox1
-			// 
+			
 			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->Location = System::Drawing::Point(348, 20);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(143, 22);
 			this->textBox1->TabIndex = 2;
-			// 
-			// textBox2
-			// 
+			
 			this->textBox2->BackColor = System::Drawing::Color::White;
 			this->textBox2->Location = System::Drawing::Point(348, 68);
 			this->textBox2->Multiline = true;
@@ -127,9 +119,7 @@ namespace InterfaceOfProgram {
 			this->textBox2->Size = System::Drawing::Size(143, 22);
 			this->textBox2->TabIndex = 3;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
-			// 
-			// textBox3
-			// 
+			
 			this->textBox3->BackColor = System::Drawing::Color::White;
 			this->textBox3->Location = System::Drawing::Point(348, 115);
 			this->textBox3->Multiline = true;
@@ -137,48 +127,38 @@ namespace InterfaceOfProgram {
 			this->textBox3->Size = System::Drawing::Size(143, 22);
 			this->textBox3->TabIndex = 4;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
-			// 
-			// label1
-			// 
+			
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(0, 16);
 			this->label1->TabIndex = 5;
-			// 
-			// label2
-			// 
+			
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->label2->Location = System::Drawing::Point(10, 20);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(262, 16);
 			this->label2->TabIndex = 6;
-			this->label2->Text = L"Êîëè÷åñòâî ïîñëåäîâàòåëüíûõ áëîêîâ";
+			this->label2->Text = L"ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã¡Ã«Ã®ÃªÃ®Ã¢";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
-			// 
-			// label3
-			// 
+			
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(10, 68);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(257, 16);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"Êîëè÷åñòâî ïàðàëëåëüíûõ ýëåìåíòîâ";
+			this->label3->Text = L"ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¯Ã Ã°Ã Ã«Ã«Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
-			// 
-			// label4
-			// 
+			
 			this->label4->AutoSize = true;
 			this->label4->Location = System::Drawing::Point(10, 115);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(208, 16);
 			this->label4->TabIndex = 8;
-			this->label4->Text = L"Êîëè÷åñòâî ðåìîíòíûõ áðèãàä";
+			this->label4->Text = L"ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã°Ã¥Ã¬Ã®Ã­Ã²Ã­Ã»Ãµ Ã¡Ã°Ã¨Ã£Ã Ã¤";
 			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
-			// 
-			// panel1
-			// 
+			
 			this->panel1->BackColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->panel1->Controls->Add(this->textBox5);
 			this->panel1->Controls->Add(this->label4);
@@ -194,64 +174,50 @@ namespace InterfaceOfProgram {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(499, 258);
 			this->panel1->TabIndex = 9;
-			// 
-			// textBox5
-			// 
+			
 			this->textBox5->Location = System::Drawing::Point(348, 210);
 			this->textBox5->Multiline = true;
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(143, 22);
 			this->textBox5->TabIndex = 10;
-			// 
-			// label8
-			// 
+			
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(10, 210);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(220, 16);
 			this->label8->TabIndex = 12;
-			this->label8->Text = L"Èíòåíñèâíîñòè âîññòàíîâëåíèÿ";
+			this->label8->Text = L"ÃˆÃ­Ã²Ã¥Ã­Ã±Ã¨Ã¢Ã­Ã®Ã±Ã²Ã¨ Ã¢Ã®Ã±Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿";
 			this->label8->Click += gcnew System::EventHandler(this, &MyForm::label8_Click);
-			// 
-			// textBox4
-			// 
+			
 			this->textBox4->Location = System::Drawing::Point(348, 165);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(143, 22);
 			this->textBox4->TabIndex = 9;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
-			// 
-			// label7
-			// 
+			
 			this->label7->AutoSize = true;
 			this->label7->Location = System::Drawing::Point(10, 165);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(158, 16);
 			this->label7->TabIndex = 11;
-			this->label7->Text = L"Èíòåíñèâíîñòè îòêàçà";
+			this->label7->Text = L"ÃˆÃ­Ã²Ã¥Ã­Ã±Ã¨Ã¢Ã­Ã®Ã±Ã²Ã¨ Ã®Ã²ÃªÃ Ã§Ã ";
 			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
-			// 
-			// panel2
-			// 
+			
 			this->panel2->BackColor = System::Drawing::Color::Khaki;
 			this->panel2->Controls->Add(this->button2);
 			this->panel2->Location = System::Drawing::Point(2, 252);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(499, 47);
 			this->panel2->TabIndex = 10;
-			// 
-			// label9
-			// 
+			
 			this->label9->AutoSize = true;
 			this->label9->Location = System::Drawing::Point(18, 14);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(355, 16);
 			this->label9->TabIndex = 12;
-			this->label9->Text = L"Êîýôôèöèåíò ãîòîâíîñòè â óñòàíîâèâøåìñÿ ðåæèìå";
-			// 
-			// panel6
-			// 
+			this->label9->Text = L"ÃŠÃ®Ã½Ã´Ã´Ã¨Ã¶Ã¨Ã¥Ã­Ã² Ã£Ã®Ã²Ã®Ã¢Ã­Ã®Ã±Ã²Ã¨ Ã¢ Ã³Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã¢Ã¸Ã¥Ã¬Ã±Ã¿ Ã°Ã¥Ã¦Ã¨Ã¬Ã¥";
+			
 			this->panel6->BackColor = System::Drawing::Color::Tan;
 			this->panel6->Controls->Add(this->textBox7);
 			this->panel6->Controls->Add(this->label9);
@@ -259,17 +225,13 @@ namespace InterfaceOfProgram {
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(689, 47);
 			this->panel6->TabIndex = 15;
-			// 
-			// textBox7
-			// 
+			
 			this->textBox7->Location = System::Drawing::Point(388, 11);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(49, 22);
 			this->textBox7->TabIndex = 13;
-			// 
-			// chart1
-			// 
+			
 			this->chart1->BackColor = System::Drawing::Color::Bisque;
 			chartArea1->Name = L"ChartArea1";
 			this->chart1->ChartAreas->Add(chartArea1);
@@ -285,9 +247,7 @@ namespace InterfaceOfProgram {
 			this->chart1->TabIndex = 11;
 			this->chart1->Text = L"chart1";
 			this->chart1->Click += gcnew System::EventHandler(this, &MyForm::chart1_Click);
-			// 
-			// label5
-			// 
+			
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Bisque;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
@@ -299,9 +259,7 @@ namespace InterfaceOfProgram {
 			this->label5->TabIndex = 12;
 			this->label5->Text = L"t";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::BottomRight;
-			// 
-			// label6
-			// 
+			
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::Color::Bisque;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
@@ -310,10 +268,8 @@ namespace InterfaceOfProgram {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(46, 22);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"Kã(t)";
-			// 
-			// MyForm
-			// 
+			this->label6->Text = L"KÃ£(t)";
+			
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1188, 299);
